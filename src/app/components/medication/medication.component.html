@@ -1,0 +1,31 @@
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData" matSort>
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="code">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.code}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lotNumber">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Lot Number</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.lotNumber}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="expirationDate">
+            <mat-header-cell *matHeaderCellDef>Expiration Date</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.expirationDate}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator
+        [pageSizeOptions]="[5, 10]"
+        [pageSize] = "5"
+        showFirstLastButtons>
+    </mat-paginator>
+</div>
